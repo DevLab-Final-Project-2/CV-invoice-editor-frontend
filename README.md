@@ -1,1 +1,0 @@
-# CV-invoice-editor-frontend
