@@ -28294,21 +28294,35 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Prvi = function Prvi() {
-  return _react.default.createElement("div", {}, [_react.default.createElement("h2", {}, "hello"), _react.default.createElement("h2", {}, "hello")]);
-};
-
-_reactDom.default.render(_react.default.createElement(Prvi), document.getElementById("content"));
+_reactDom.default.render(_react.default.createElement("h2", {}, "hello"), document.getElementById("content"));
 
 function getJWT() {
   fetch("http://lux-escanor12.000webhostapp.com/jwttoken.php").then(function (response) {
     return response.json();
   }).then(function (responseJson) {
     console.log(responseJson);
+    localStorage.setItem("jwt", responseJson.nekiFejkToken);
   });
 }
 
-getJWT();
+function checkJWT() {
+  fetch("http://lux-escanor12.000webhostapp.com/jwttoken.php").then(function (response) {
+    return response.json();
+  }).then(function (responseJson) {
+    if (localStorage.getItem("jwt").toString() === responseJson.nekiFejkToken.toString()) {
+      alert("welcome");
+    } else {
+      localStorage.removeItem("jwt");
+      alert("please log in");
+    }
+  });
+}
+
+if (localStorage.getItem("jwt")) {
+  checkJWT();
+} else {
+  getJWT();
+}
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

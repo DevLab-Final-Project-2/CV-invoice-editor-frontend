@@ -1,14 +1,8 @@
 import React from "react";
 import  ReactDom from "react-dom";
 
-const Prvi = () => {
-    return React.createElement("div", {} , [
-        React.createElement("h2", {}, "hello"),
-        React.createElement("h2", {}, "hello"),
-    ]);
-}
 
-ReactDom.render(React.createElement(Prvi), document.getElementById("content"));
+ReactDom.render(React.createElement("h2", {}, "hello"), document.getElementById("content"));
 
 
 function getJWT(){
@@ -17,8 +11,28 @@ function getJWT(){
         .then(response => response.json())
         .then(responseJson => {
           console.log(responseJson);
+          localStorage.setItem("jwt", responseJson.nekiFejkToken);
         })
     
     }
 
-    getJWT();
+    function checkJWT(){
+   
+      fetch("http://lux-escanor12.000webhostapp.com/jwttoken.php")
+          .then(response => response.json())
+          .then(responseJson => {
+           if(localStorage.getItem("jwt").toString() === responseJson.nekiFejkToken.toString()){
+           alert("welcome");
+           }else{
+           localStorage.removeItem("jwt");
+           alert("please log in");
+           }
+          })
+      
+      }
+
+    if(localStorage.getItem("jwt")){
+      checkJWT();
+    }else{
+      getJWT();
+    }
