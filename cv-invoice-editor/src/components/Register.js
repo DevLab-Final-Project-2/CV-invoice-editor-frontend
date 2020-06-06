@@ -5,9 +5,9 @@ import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
 
 class Register extends React.Component {
   state = {};
-  // onFinish = (values) => {
-  //   console.log("Received values of form: ", values);
-  // };
+  onFinish(values) {
+    console.log("Received values of form: ", values);
+  }
   render() {
     return (
       <div className="loginPage">
@@ -20,7 +20,7 @@ class Register extends React.Component {
             initialValues={{
               remember: true,
             }}
-            // onFinish={onFinish}
+            onFinish={this.onFinish}
           >
             <Form.Item
               name="email"
@@ -66,15 +66,6 @@ class Register extends React.Component {
                 placeholder="Password"
               />
             </Form.Item>
-            {/* <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item> */}
-
-            {/* <a className="login-form-forgot" href="">
-            Forgot password
-          </a> */}
-            {/* </Form.Item> */}
 
             <Form.Item>
               <Button
@@ -84,15 +75,9 @@ class Register extends React.Component {
               >
                 Sign up
               </Button>
-              {/* Or{" "} */}
-              {/* <Link to="/register">
-            <a href="">register now!</a>
-          </Link> */}
             </Form.Item>
-            <Link to="/login">
-              <a href="" className="titleText ">
-                Log in
-              </a>
+            <Link to="/login" className="titleText ">
+              Log in
             </Link>
           </Form>
         </div>

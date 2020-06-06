@@ -6,9 +6,9 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 class Login extends React.Component {
   state = {};
 
-  // onFinish = (values) => {
-  //   console.log("Received values of form: ", values);
-  // };
+  onFinish(values) {
+    console.log("Received values of form: ", values);
+  }
   render() {
     return (
       <div className="loginPage">
@@ -21,7 +21,7 @@ class Login extends React.Component {
             initialValues={{
               remember: true,
             }}
-            // onFinish={onFinish}
+            onFinish={this.onFinish}
           >
             <Form.Item
               name="username"
@@ -52,16 +52,6 @@ class Login extends React.Component {
                 placeholder="Password"
               />
             </Form.Item>
-            {/* <Form.Item>
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item> */}
-
-            {/* <a className="login-form-forgot" href="">
-                Forgot password
-              </a> */}
-            {/* </Form.Item> */}
-
             <Form.Item>
               <Button
                 type="primary"
@@ -70,15 +60,9 @@ class Login extends React.Component {
               >
                 Sign in
               </Button>
-              {/* Or{" "} */}
-              {/* <Link to="/register">
-                <a href="">register now!</a>
-              </Link> */}
             </Form.Item>
-            <Link to="/register">
-              <a href="" className="titleText ">
-                Register
-              </a>
+            <Link to="/register" className="titleText ">
+              Register
             </Link>
           </Form>
         </div>
