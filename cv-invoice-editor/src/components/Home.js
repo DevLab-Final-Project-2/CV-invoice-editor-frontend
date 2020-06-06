@@ -6,7 +6,8 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <NavBar></NavBar> <h1>Home</h1>
+        <NavBar></NavBar>
+        <h1>Home</h1>
       </div>
     );
   }
