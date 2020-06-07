@@ -1,0 +1,65 @@
+@import "~antd/dist/antd.css";
+
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+  color: thistle;
+}
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(45, 137, 139);
+  opacity: 80%;
+  height: 100vh;
+  width: 100vw;
+}
+.popUp {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: white;
+  -webkit-box-shadow: 10px 11px 32px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 11px 32px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 11px 32px 1px rgba(0, 0, 0, 0.75);
+}
+.titleText {
+  color: rgba(45, 132, 138, 1);
+}
+.hLine {
+  margin-bottom: 15px;
+  border: 1px solid rgb(45, 137, 139);
+  border-radius: 5px;
+}
+.loginButton {
+  background-color: rgb(45, 137, 139);
+}
+.loginButton:hover {
+  background-color: rgb(64, 173, 175);
+}
+.loginButton:focus {
+  background-color: rgb(64, 173, 175);
+}
