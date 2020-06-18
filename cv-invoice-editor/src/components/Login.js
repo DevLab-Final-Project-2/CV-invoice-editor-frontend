@@ -7,7 +7,27 @@ class Login extends React.Component {
   state = {};
 
   onFinish(values) {
-    console.log("Received values of form: ", values);
+    console.log("Received values of form: ", JSON.stringify(values));
+
+    fetch('http://lux-escanor12.000webhostapp.com/jwttoken.php', {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+      .then(res => {
+
+        /*  this.props.history.push('/'); */
+        return res.json();
+
+      }).then(data => { console.log(data.nekiFejkToken); localStorage.setItem("jwt", data.nekiFejkToken); })
+      .catch(err => {
+        console.error(err);
+        alert('Error logging in please try again');
+      });
+
+
   }
   render() {
     return (
