@@ -7,6 +7,28 @@ class Register extends React.Component {
   state = {};
   onFinish(values) {
     console.log("Received values of form: ", values);
+    let newValues = values;
+    newValues.role = "0";
+    console.log("Received values of form: ", JSON.stringify(values));
+    fetch('http://31.204.255.177:3000/user', {
+      method: 'POST',
+      body: JSON.stringify(newValues),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      
+       /*  this.props.history.push('/'); */
+       return res.json();
+      
+    }).then(data => { console.log(data.token); localStorage.setItem("jwt", data.token); })
+    .catch(err => {
+      console.error(err);
+      alert('Error logging in please try again');
+    });
+
   }
   render() {
     return (

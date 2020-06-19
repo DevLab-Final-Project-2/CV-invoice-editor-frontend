@@ -51,7 +51,7 @@
 }
 .hLine {
   margin-bottom: 15px;
-  border: 1px solid rgb(45, 137, 139);
+  border: 1.2px solid rgb(45, 137, 139);
   border-radius: 5px;
 }
 .loginButton {
@@ -62,4 +62,41 @@
 }
 .loginButton:focus {
   background-color: rgb(64, 173, 175);
+}
+
+.gridColor{
+  background-color:  rgb(64, 173, 175);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.invoice{
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 40px;
+  width: 60vw;
+  height: 60vh;
+}
+
+#components-grid-demo-playground [class~='ant-col'] {
+  background: transparent;
+  border: 0;
+}
+#components-grid-demo-playground [class~='ant-col'] > div {
+  height: 120px;
+  font-size: 14px;
+  line-height: 120px;
+  background: #0092ff;
+}
+#components-grid-demo-playground pre {
+  padding: 8px 16px;
+  font-size: 13px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+#components-grid-demo-playground pre.demo-code {
+  direction: ltr;
 }

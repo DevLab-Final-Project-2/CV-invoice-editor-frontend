@@ -8,20 +8,25 @@ class Login extends React.Component {
 
   onFinish(values) {
     console.log("Received values of form: ", JSON.stringify(values));
-
-    fetch('http://lux-escanor12.000webhostapp.com/jwttoken.php', {
+    let username = values.username;
+    let pass = values.password;
+    let newValues = { email: "", password: "" };
+    newValues.email = username;
+    newValues.password = pass;
+    console.log("Received values of form: ", JSON.stringify(newValues));
+    fetch('http://31.204.255.177:3000/user/login', {
       method: 'POST',
-      body: JSON.stringify(values),
+      body: JSON.stringify(newValues),
       headers: {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       }
-    })
-      .then(res => {
+    }).then(res => {
 
-        /*  this.props.history.push('/'); */
-        return res.json();
+      /*  this.props.history.push('/'); */
+      return res.json();
 
-      }).then(data => { console.log(data.nekiFejkToken); localStorage.setItem("jwt", data.nekiFejkToken); })
+    }).then(data => { console.log(data.token); localStorage.setItem("jwt", data.token); })
       .catch(err => {
         console.error(err);
         alert('Error logging in please try again');
