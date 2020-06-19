@@ -5,6 +5,8 @@ import Avatar from './Avatar'
 import { InputNumber } from 'antd';
 import { DatePicker } from 'antd';
 import InvoiceItem from './InvoiceItem'
+import { PlusCircleOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 const { TextArea } = Input;
 
 
@@ -51,6 +53,7 @@ class Invoice extends React.Component {
                     </Row>
                     <InvoiceItem></InvoiceItem>
                     <InvoiceItem></InvoiceItem>
+                    <Button style={{ marginLeft: '2vw', marginTop: '2vh', backgroundColor: 'rgba(17, 70, 73, 1)', color: 'white' }} icon={<PlusCircleOutlined />}>Add Item</Button>
 
                     <Row gutter={[8, 8]} style={{ marginTop: '5vh' }}>
                         <Col span={12} >
@@ -72,9 +75,9 @@ class Invoice extends React.Component {
                             </div>
                         </Col>
                     </Row>
-
                 </div>
-            </div >);
+            </div >
+        );
     }
 }
 
