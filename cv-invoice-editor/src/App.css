@@ -67,7 +67,8 @@
 .gridColor{
   background-color:  rgb(64, 173, 175);
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,8 +128,34 @@
 .ant-upload-picture-card-wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-top: 7vh;
+  margin-top: 5vh;
 }
 .datePicker{
   margin-left: 6vw;
+}
+.items{
+  background-color: rgba(17, 70, 73, 1);
+  border-radius: 7px;
+}
+.itemsEnd{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.oneItem{
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: flex-start;
+}
+.itemDes{
+  display: flex;
+  justify-content: space-between;
+}
+.column3{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-bottom: 5vh;
 }

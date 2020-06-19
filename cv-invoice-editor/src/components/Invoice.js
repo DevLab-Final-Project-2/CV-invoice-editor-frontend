@@ -4,6 +4,9 @@ import { Input } from 'antd';
 import Avatar from './Avatar'
 import { InputNumber } from 'antd';
 import { DatePicker } from 'antd';
+import InvoiceItem from './InvoiceItem'
+const { TextArea } = Input;
+
 
 const { RangePicker } = DatePicker;
 
@@ -17,7 +20,7 @@ class Invoice extends React.Component {
         return (
             <div className='gridColor'>
                 <div className='invoice'>
-                    <h1> INVOICE</h1>
+                    <h1>INVOICE</h1>
                     <hr className='hLine' />
                     <Row gutter={[8, 8]}>
                         <Col span={12}>
@@ -39,6 +42,37 @@ class Invoice extends React.Component {
                             <RangePicker className='datePicker flexRight' />
                         </Col>
                     </Row>
+                    <hr className='hLine' />
+                    <Row className='items'>
+                        <Col span={15}><h3 style={{ color: 'white', marginLeft: '3vw' }}>Item</h3></Col>
+                        <Col span={3} ><h3 className='oneItem'>Quantity</h3></Col>
+                        <Col span={3}><h3 className='oneItem'>Rate</h3></Col>
+                        <Col span={3}><h3 className='oneItem'>Amount</h3></Col>
+                    </Row>
+                    <InvoiceItem></InvoiceItem>
+                    <InvoiceItem></InvoiceItem>
+
+                    <Row gutter={[8, 8]} style={{ marginTop: '5vh' }}>
+                        <Col span={12} >
+                            <TextArea rows={4} style={{ marginLeft: '2vw', marginBottom: '3vh' }} placeholder={'Notes'} />
+                            <TextArea rows={4} style={{ marginLeft: '2vw', marginBottom: '3vh' }} placeholder={'Terms & Conditions'} />
+                        </Col>
+                        <Col span={12} className="column3">
+                            <div className='flexRow flexRight'>
+                                <h2 style={{ marginRight: '1vw' }}>Sub Total:</h2>
+                                <InputNumber min={0} defaultValue={0} onChange={this.onChange} />
+                            </div>
+                            <div className='flexRow flexRight'>
+                                <h2 style={{ marginRight: '1vw' }}>Sales tax:</h2>
+                                <InputNumber min={0} defaultValue={0} onChange={this.onChange} />
+                            </div>
+                            <div className='flexRow flexRight'>
+                                <h2 style={{ marginRight: '1vw' }}>Total:</h2>
+                                <InputNumber min={0} defaultValue={0} onChange={this.onChange} />
+                            </div>
+                        </Col>
+                    </Row>
+
                 </div>
             </div >);
     }
