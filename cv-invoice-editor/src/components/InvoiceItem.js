@@ -6,7 +6,7 @@ import { Row, Col } from 'antd';
 import { Input } from 'antd';
 const { TextArea } = Input;
 
-class nvoiceten extends React.Component {
+class InvoiceItem extends React.Component {
     state = {}
     render() {
         return (
@@ -14,7 +14,7 @@ class nvoiceten extends React.Component {
                 <Row style={{ marginTop: '5vh' }}>
                     <Col span={15} className='itemDes'>
                         <Tooltip title="delete">
-                            <Button shape="circle" icon={<DeleteOutlined />} />
+                            <Button shape="circle" icon={<DeleteOutlined />} onClick={this.props.delete} />
                         </Tooltip>
                         <TextArea rows={4} placeholder={'Enter item name/description'} />
                     </Col>
@@ -38,9 +38,8 @@ class nvoiceten extends React.Component {
                         />
                     </Col>
                 </Row>
-            </React.Fragment>
-        );
+            </React.Fragment>);
     }
 }
 
-export default nvoiceten;
+export default InvoiceItem;

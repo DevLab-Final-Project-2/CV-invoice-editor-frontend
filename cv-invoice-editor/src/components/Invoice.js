@@ -4,9 +4,7 @@ import { Input } from 'antd';
 import Avatar from './Avatar'
 import { InputNumber } from 'antd';
 import { DatePicker } from 'antd';
-import InvoiceItem from './InvoiceItem'
-import { PlusCircleOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
+import InvoiceItemList from './InvoiceItemList'
 const { TextArea } = Input;
 
 
@@ -36,7 +34,7 @@ class Invoice extends React.Component {
                             <Input placeholder="City, State Zip" className='invoiceInput' />
                         </Col>
                         <Col span={12} className='column2'>
-                            <div className='flexRight' ><Avatar ></Avatar></div>
+                            <div className='flexRight' ><Avatar></Avatar></div>
                             <div className='flexRow flexRight'>
                                 <h2 style={{ marginRight: '1vw' }}>Invoice #:</h2>
                                 <InputNumber min={1} defaultValue={1} onChange={this.onChange} />
@@ -51,9 +49,8 @@ class Invoice extends React.Component {
                         <Col span={3}><h3 className='oneItem'>Rate</h3></Col>
                         <Col span={3}><h3 className='oneItem'>Amount</h3></Col>
                     </Row>
-                    <InvoiceItem></InvoiceItem>
-                    <InvoiceItem></InvoiceItem>
-                    <Button style={{ marginLeft: '2vw', marginTop: '2vh', backgroundColor: 'rgba(17, 70, 73, 1)', color: 'white' }} icon={<PlusCircleOutlined />}>Add Item</Button>
+                    <InvoiceItemList ></InvoiceItemList>
+
 
                     <Row gutter={[8, 8]} style={{ marginTop: '5vh' }}>
                         <Col span={12} >
