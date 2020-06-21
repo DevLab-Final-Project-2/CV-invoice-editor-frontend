@@ -4,6 +4,8 @@ import { Input } from 'antd';
 import Avatar from './Avatar'
 import { InputNumber } from 'antd';
 import { DatePicker } from 'antd';
+import { Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons'
 import InvoiceItemList from './InvoiceItemList'
 const { TextArea } = Input;
 
@@ -56,6 +58,9 @@ class Invoice extends React.Component {
                         <Col span={12} >
                             <TextArea rows={4} style={{ marginLeft: '2vw', marginBottom: '3vh' }} placeholder={'Notes'} />
                             <TextArea rows={4} style={{ marginLeft: '2vw', marginBottom: '3vh' }} placeholder={'Terms & Conditions'} />
+                            <Button style={{ width: '50%', backgroundColor: 'rgba(17, 70, 73, 1)', color: 'white' }} icon={<UploadOutlined />}>
+                                Submit Invoice
+                    </Button>
                         </Col>
                         <Col span={12} className="column3">
                             <div className='flexRow flexRight'>
@@ -70,6 +75,7 @@ class Invoice extends React.Component {
                                 <h2 style={{ marginRight: '1vw' }}>Total:</h2>
                                 <InputNumber min={0} defaultValue={0} onChange={this.onChange} />
                             </div>
+
                         </Col>
                     </Row>
                 </div>
