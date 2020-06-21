@@ -51,7 +51,7 @@
 }
 .hLine {
   margin-bottom: 15px;
-  border: 1px solid rgb(45, 137, 139);
+  border: 1.2px solid rgb(45, 137, 139);
   border-radius: 5px;
 }
 .loginButton {
@@ -62,4 +62,100 @@
 }
 .loginButton:focus {
   background-color: rgb(64, 173, 175);
+}
+
+.gridColor{
+  background-color:  rgb(64, 173, 175);
+  width: 100vw;
+  height: 100%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.invoice{
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 40px;
+  width: 80vw;
+  height: auto;
+}
+
+#components-grid-demo-playground [class~='ant-col'] {
+  background: transparent;
+  border: 0;
+}
+#components-grid-demo-playground [class~='ant-col'] > div {
+  height: 120px;
+  font-size: 14px;
+  line-height: 120px;
+  background: #0092ff;
+}
+#components-grid-demo-playground pre {
+  padding: 8px 16px;
+  font-size: 13px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+#components-grid-demo-playground pre.demo-code {
+  direction: ltr;
+}
+.invoiceInput{
+  width: 60%;
+  margin-left: 5vw;
+  margin-bottom: 10px;
+}
+.avatar-uploader > .ant-upload {
+  width: 170px;
+  height: 170px;
+}
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.column2{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.flexRight{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5vw;
+}
+.ant-upload-picture-card-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5vh;
+}
+.datePicker{
+  margin-left: 6vw;
+}
+.items{
+  background-color: rgba(17, 70, 73, 1);
+  border-radius: 7px;
+}
+.itemsEnd{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.oneItem{
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: flex-start;
+}
+.itemDes{
+  display: flex;
+  justify-content: space-between;
+}
+.column3{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-bottom: 5vh;
 }

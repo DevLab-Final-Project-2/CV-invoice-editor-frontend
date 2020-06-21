@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button } from "antd";
 import { Link } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
@@ -10,7 +10,7 @@ class Login extends React.Component {
     console.log("Received values of form: ", JSON.stringify(values));
     let username = values.username;
     let pass = values.password;
-    let newValues = {email:"", password:""};
+    let newValues = { email: "", password: "" };
     newValues.email = username;
     newValues.password = pass;
     console.log("Received values of form: ", JSON.stringify(newValues));
@@ -21,17 +21,16 @@ class Login extends React.Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    })
-    .then(res => {
-      
-       /*  this.props.history.push('/'); */
-       return res.json();
-      
+    }).then(res => {
+
+      /*  this.props.history.push('/'); */
+      return res.json();
+
     }).then(data => { console.log(data.token); localStorage.setItem("jwt", data.token); })
-    .catch(err => {
-      console.error(err);
-      alert('Error logging in please try again');
-    });
+      .catch(err => {
+        console.error(err);
+        alert('Error logging in please try again');
+      });
 
 
   }
