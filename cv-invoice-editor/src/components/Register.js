@@ -10,7 +10,7 @@ class Register extends React.Component {
     let newValues = values;
     newValues.role = "0";
     console.log("Received values of form: ", JSON.stringify(values));
-    fetch('http://31.204.255.177:3000/user', {
+    fetch('http://78.155.34.239:3000/user', {
       method: 'POST',
       body: JSON.stringify(newValues),
       headers: {

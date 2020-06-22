@@ -14,7 +14,7 @@ class Login extends React.Component {
     newValues.email = username;
     newValues.password = pass;
     console.log("Received values of form: ", JSON.stringify(newValues));
-    fetch('http://31.204.255.177:3000/user/login', {
+    fetch('http://78.155.34.239:3000/user/login', {
       method: 'POST',
       body: JSON.stringify(newValues),
       headers: {
@@ -26,7 +26,7 @@ class Login extends React.Component {
       /*  this.props.history.push('/'); */
       return res.json();
 
-    }).then(data => { console.log(data.token); localStorage.setItem("jwt", data.token); })
+    }).then(data => { console.log(data); localStorage.setItem("jwt", data.token); })
       .catch(err => {
         console.error(err);
         alert('Error logging in please try again');
