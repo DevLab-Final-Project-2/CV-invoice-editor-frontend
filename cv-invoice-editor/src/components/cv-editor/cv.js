@@ -7,7 +7,7 @@ import Qualif from './Qualif'
 import Education from './Education'
 import Interests from './Interests'
 import { UploadOutlined } from '@ant-design/icons'
-
+import { Input } from 'antd';
 
 
 class CV extends React.Component {
@@ -98,6 +98,7 @@ class CV extends React.Component {
                                     onClick={() => this.hideComponent("showHideInterests")}>
                                     Interests
                             </Button>
+                                <Input placeholder="File name" style={{ width: '70%', marginBottom: '1vh', marginTop: '3vh' }} />
                                 <Button style={{ width: '70%', backgroundColor: 'white', color: 'rgba(17, 70, 73, 1)', borderRadius: '20px' }} icon={<UploadOutlined />}>
                                     Submit CV
                             </Button>

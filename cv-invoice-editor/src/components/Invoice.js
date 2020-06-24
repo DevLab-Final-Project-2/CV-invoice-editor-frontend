@@ -55,9 +55,10 @@ class Invoice extends React.Component {
 
 
                     <Row gutter={[8, 8]} style={{ marginTop: '5vh' }}>
-                        <Col span={12} >
+                        <Col span={12} style={{ display: 'flex', flexDirection: 'column' }}>
                             <TextArea rows={4} style={{ marginLeft: '2vw', marginBottom: '3vh' }} placeholder={'Notes'} />
                             <TextArea rows={4} style={{ marginLeft: '2vw', marginBottom: '3vh' }} placeholder={'Terms & Conditions'} />
+                            <Input placeholder="File name" style={{ width: '50%', marginBottom: '1vh', marginTop: '3vh' }} />
                             <Button style={{ width: '50%', backgroundColor: 'rgba(17, 70, 73, 1)', color: 'white' }} icon={<UploadOutlined />}>
                                 Submit Invoice
                     </Button>
