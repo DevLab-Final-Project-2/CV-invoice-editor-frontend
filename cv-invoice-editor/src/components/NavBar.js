@@ -9,10 +9,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <Layout className="layout">
-        <Header>
+        <Header style={{ backgroundColor: 'rgba(17, 70, 73, 1)' }}>
           <div className="logo" />
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-            <Menu.Item key="1">
+            <Menu.Item key="1" style={{ backgroundColor: 'rgb(45, 137, 139)' }}>
               <Link to="/">Home</Link>
             </Menu.Item>
             <Menu.Item key="2">
@@ -26,6 +26,9 @@ class NavBar extends React.Component {
             </Menu.Item>
             <Menu.Item key="5">
               <Link to="/cv-editor">CV</Link>
+            </Menu.Item>
+            <Menu.Item key="5">
+              <Link to="/dashboard">Dashboard</Link>
             </Menu.Item>
           </Menu>
         </Header>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import { Input } from 'antd';
-import Avatar from './Avatar'
+import Avatar from '../Avatar'
 import { InputNumber } from 'antd';
 import { DatePicker } from 'antd';
 import { Button } from 'antd';
