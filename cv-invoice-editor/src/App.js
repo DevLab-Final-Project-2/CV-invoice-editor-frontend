@@ -4,7 +4,9 @@ import Register from "./components/Register";
 import "./App.css";
 import Home from "./components/Home";
 import Invoice from './components/Invoice'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import CV from './components/cv-editor/cv'
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import NoPage from './components/NoPage'
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/invoice" component={Invoice} />
+        <Route path="/invoice-editor" component={Invoice} />
+        <Route path="/cv-editor" component={CV} />
+        <Route path="/404" component={NoPage} />
+        <Redirect to='/404' />
       </Switch>
     </Router>
   );

@@ -25,13 +25,13 @@ class CV extends React.Component {
     hideComponent(name) {
         switch (name) {
             case "showHidePersonalInfo":
-                this.setState({ showHidePersonalInfo: !this.state.showHidePersonalInfo });
+                this.setState({ showHidePersonalInfo: true });
                 this.setState({ showHideWorkXp: false });
                 this.setState({ showHideQualif: false });
                 this.setState({ showHideEducation: false });
                 break;
             case "showHideWorkXp":
-                this.setState({ showHideWorkXp: !this.state.showHideWorkXp });
+                this.setState({ showHideWorkXp: true });
                 this.setState({ showHidePersonalInfo: false });
                 this.setState({ showHideQualif: false });
                 this.setState({ showHideEducation: false });
@@ -39,7 +39,7 @@ class CV extends React.Component {
 
                 break;
             case "showHideQualif":
-                this.setState({ showHideQualif: !this.state.showHideQualif });
+                this.setState({ showHideQualif: true });
                 this.setState({ showHidePersonalInfo: false });
                 this.setState({ showHideWorkXp: false });
                 this.setState({ showHideEducation: false });
@@ -47,14 +47,14 @@ class CV extends React.Component {
 
                 break;
             case "showHideEducation":
-                this.setState({ showHideEducation: !this.state.showHideEducation });
+                this.setState({ showHideEducation: true });
                 this.setState({ showHideWorkXp: false });
                 this.setState({ showHideQualif: false });
                 this.setState({ showHidePersonalInfo: false });
                 this.setState({ showHideInterests: false });
                 break;
             case "showHideInterests":
-                this.setState({ showHideInterests: !this.state.showHideInterests });
+                this.setState({ showHideInterests: true });
                 this.setState({ showHideWorkXp: false });
                 this.setState({ showHideQualif: false });
                 this.setState({ showHidePersonalInfo: false });

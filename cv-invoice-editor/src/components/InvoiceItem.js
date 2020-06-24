@@ -11,12 +11,12 @@ class InvoiceItem extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Row style={{ marginTop: '5vh' }}>
+                <Row style={{ marginTop: '1vh' }}>
                     <Col span={15} className='itemDes'>
                         <Tooltip title="delete">
                             <Button shape="circle" icon={<DeleteOutlined />} onClick={this.props.delete} />
                         </Tooltip>
-                        <TextArea rows={4} placeholder={'Enter item name/description'} />
+                        <TextArea rows={1} placeholder={'Enter item name/description'} />
                     </Col>
                     <Col span={3} className='oneItem'><InputNumber min={1} defaultValue={1} onChange={this.onChange} /></Col>
                     <Col span={3} className='oneItem'>
