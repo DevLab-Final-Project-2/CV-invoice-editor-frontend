@@ -81,6 +81,14 @@
   width: 80vw;
   height: auto;
 }
+.cv{
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 40px;
+  width: 80vw;
+  height: 100vh;
+}
 
 #components-grid-demo-playground [class~='ant-col'] {
   background: transparent;
@@ -104,6 +112,10 @@
 .invoiceInput{
   width: 60%;
   margin-left: 5vw;
+  margin-bottom: 10px;
+}
+.cvInput{
+  width: 90%;
   margin-bottom: 10px;
 }
 .avatar-uploader > .ant-upload {

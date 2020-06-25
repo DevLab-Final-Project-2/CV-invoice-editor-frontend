@@ -9,6 +9,7 @@ class PersonalInfo extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <h1>Personal Information:</h1>
                 <Row gutter={[8, 8]}>
                     <Col span={14} style={{ display: 'flex', flexDirection: 'column' }}>
                         <Input placeholder="First name" className='cvInput' />
