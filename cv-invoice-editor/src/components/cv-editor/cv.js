@@ -6,12 +6,13 @@ import WorkXp from './WorkXp'
 import Qualif from './Qualif'
 import Education from './Education'
 import Interests from './Interests'
-import { UploadOutlined } from '@ant-design/icons'
+import { UploadOutlined, IdcardOutlined } from '@ant-design/icons'
 import { Input } from 'antd';
 
 
 let cvid = "5eef646733180507a0e4ffc7";
 let token = localStorage.getItem("jwt").toString();
+
 
 class CV extends React.Component {
     constructor(props) {
@@ -87,8 +88,8 @@ var requestOptions = {
 };
 
 fetch("http://78.155.34.239:3000/create_cv", requestOptions)
-  .then(response => response.text())
-  .then(function(result){ console.log(result); window.cvid=result.cv_id; console.log(window.cvid);})
+  .then(response => response.json())
+  .then(function(result){ console.log(result); window.cvid=result.cv._id; console.log(window.cvid);})
   .catch(error => console.log('error', error));
 }
 
@@ -102,10 +103,26 @@ var myHeaders2 = new Headers();
 myHeaders2.append("Authorization", `Bearer ${token}`);
 myHeaders2.append("Content-Type", "application/json");
 
-let cvinput = document.getElementsByClassName("cvInput");
+let cvinput = document.getElementsByClassName("ant-input");
 
-var raw2 = JSON.stringify({"cv_id":window.cvid,"fields":[{"name":cvinput[0].value,"value":"rger"},{"name":"rggr","value":"logate"}]});
+let fields = [];
 
+for(let i=0; i<cvinput.length;i++){
+let field = JSON.parse("{}");
+field.name = cvinput[i].placeholder.split(" ").join("");
+field.value = cvinput[i].value;
+if (field.value==""){
+    field.value=" ";
+}
+fields.push(field);
+}
+
+console.log(fields);
+
+/* fields = [{"name":"Firstname", "value":"Fbb gwg"}, {"name":"Lastname", "value":"grr"}, {"name":"Email", "value":"grr"}]; */
+
+var raw2 = JSON.stringify({"cv_id":window.cvid,"fields":fields});
+console.log(raw2);
 var requestOptions2 = {
   method: 'POST',
   headers: myHeaders2,
@@ -114,7 +131,7 @@ var requestOptions2 = {
 };
 
 fetch("http://78.155.34.239:3000/save_cv_fields", requestOptions2)
-  .then(response => response.text())
+  .then(response => response.json())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 
@@ -179,3 +196,44 @@ fetch("http://78.155.34.239:3000/save_cv_fields", requestOptions2)
 
 
 export default CV;
+
+let myArr=[];
+
+function load0(){
+    const queryString = window.location.search;
+
+    const urlParams = new URLSearchParams(queryString);
+    
+    const id = urlParams.get('cvid');
+    
+    if(id){
+        let token=localStorage.getItem("jwt").toString();
+        let cv_id=id;
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${token}`);
+        myHeaders.append("Content-Type", "application/json");
+        
+        var requestOptions = {
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
+        
+        fetch(`http://78.155.34.239:3000/cv_fields/${cv_id}`, requestOptions)
+          .then(response => response.json())
+          .then((result)=>{ myArr = result; console.log(myArr); window.cvid = cv_id; /* console.log(result); cvid=result.cv_id; */ })
+          .catch(function(error){ console.log('error', error);  });
+    }
+}
+
+load0();
+
+export function load(x){
+ let text = "";
+    if(myArr[x]){
+    text = myArr[x].value;
+    }
+
+    return x + text;
+}
+

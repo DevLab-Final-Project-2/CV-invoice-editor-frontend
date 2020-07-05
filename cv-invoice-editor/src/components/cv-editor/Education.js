@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
+import { Loading3QuartersOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
 
 class Education extends React.Component {
@@ -14,3 +15,21 @@ class Education extends React.Component {
 }
 
 export default Education;
+
+/*  export function educationLoad(){
+    let cvinput = document.getElementsByClassName("ant-input");
+
+let fields = [];
+
+for(let i=0; i<cvinput.length;i++){
+let field = JSON.parse("{}");
+field.name = cvinput[i].placeholder.replace(" ", "");
+field.value = cvinput[i].value;
+if (field.value==""){
+    field.value=" ";
+}
+fields.push(field);
+}
+
+return fields;
+}  */
